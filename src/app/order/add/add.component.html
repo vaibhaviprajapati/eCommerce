@@ -1,0 +1,104 @@
+<form [formGroup]="orderForm" novalidate (ngSubmit)="addOrder()" >
+  <div>
+   <label>Name</label>
+   <input type="text" formControlName="name">
+   <span *ngIf="(orderForm.get('name').touched || orderForm.get('name').dirty ) && orderForm.get('name').errors ">
+      <span *ngIf="orderForm.get('name').errors" >
+        This Field Cant be Empty.
+      </span>
+      <span *ngIf="orderForm.get('name').errors" >
+        Please Enter atleast 5 characters
+      </span>
+   </span>
+  </div>
+  <div>
+      <label>Quantity</label>
+      <input type="number" formControlName="quantity">
+      <span *ngIf="(orderForm.get('quantity').touched || orderForm.get('quantity').dirty ) && orderForm.get('quantity').errors ">
+          <span *ngIf="orderForm.get('quantity').errors" >
+            This Field Cant be Empty.
+          </span>
+          <span *ngIf="orderForm.get('quantity').errors" >
+           Quantity must be less than 50
+          </span>
+       </span>
+  </div>
+  <div>
+      <label>size</label>
+      <select formControlName="size">
+          <option value="1">XS</option>
+          <option value="2">S</option>
+          <option value="3">M</option>
+          <option value="4">L</option>
+          <option value="5">XL</option>
+          <option value="6">XXL</option>
+        </select>
+  </div>
+  <div>
+      <label>Price</label>
+      <input type="number"  formControlName="price">
+      <span *ngIf="(orderForm.get('price').touched || orderForm.get('price').dirty ) && orderForm.get('price').errors ">
+          <span *ngIf="orderForm.get('price').errors" >
+            This Field Cant be Empty.
+          </span>
+      </span>
+  </div>
+  <div>
+      <label>Email</label>
+      <input type="text" formControlName="email">
+      <span *ngIf="(orderForm.get('email').touched || orderForm.get('email').dirty ) && orderForm.get('email').errors ">
+          <span *ngIf="orderForm.get('email').errors" >
+            This Field Cant be Empty.
+          </span>
+          <span *ngIf="orderForm.get('email').errors" >
+              Please Enter atleast 10 characters
+          </span>
+       </span>
+  </div>
+  <div>
+      <label>Phone</label>
+      <input type="text" formControlName="phone">
+      <span *ngIf="(orderForm.get('email').touched || orderForm.get('email').dirty ) && orderForm.get('email').errors ">
+          <span *ngIf="orderForm.get('email').errors" >
+            This Field Cant be Empty.
+          </span>
+      </span>
+  </div>
+  <div>
+      <label>Address</label>
+      <input type="text" formControlName="address" >
+      <span *ngIf="(orderForm.get('address').touched || orderForm.get('address').dirty ) && orderForm.get('address').errors ">
+          <span *ngIf="orderForm.get('address').errors" >
+            This Field Cant be Empty.
+          </span>
+          <span *ngIf="orderForm.get('email').errors" >
+              Please Enter atleast 10 characters
+          </span>
+       </span>
+  </div>
+  <div>
+      <label>City</label>
+      <input type="text" formControlName="city">
+      <span *ngIf="(orderForm.get('city').touched || orderForm.get('city').dirty ) && orderForm.get('city').errors ">
+          <span *ngIf="orderForm.get('city').errors" >
+            This Field Cant be Empty.
+          </span>
+          <span *ngIf="orderForm.get('city').errors" >
+              Please Enter atleast 3 characters
+          </span>
+       </span>
+  </div>
+  <div>
+      <label>State</label>
+      <input type="text" formControlName="state">
+      <span *ngIf="(orderForm.get('state').touched || orderForm.get('state').dirty ) && orderForm.get('state').errors ">
+          <span *ngIf="orderForm.get('state').errors" >
+            This Field Cant be Empty.
+          </span>
+          <span *ngIf="orderForm.get('state').errors" >
+              Please Enter atleast 5 characters
+          </span>
+       </span>
+  </div>
+  <button type="submit"  >Save order</button>
+</form>
